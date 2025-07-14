@@ -859,7 +859,7 @@ Return Value:
 
 	controller = (RMI4_CONTROLLER_CONTEXT*)ControllerContext;
 
-	if (NULL != controller->BklContext)
+	if (controller != NULL && controller->BklContext != NULL)
 	{
 		TchBklDeinitialize(controller->BklContext);
 		controller->BklContext = NULL;
