@@ -459,7 +459,7 @@ OnPrepareHardware(
 
 	if (devContext->HasResetGpio)
 	{
-		status = OpenIOTarget(devContext, devContext->ResetGpioId, GENERIC_READ | GENERIC_WRITE, &devContext->ResetGpio);
+		status = OpenIOTarget(devContext, devContext->ResetGpioId, GENERIC_WRITE, &devContext->ResetGpio);
 		if (!NT_SUCCESS(status)) {
 			Trace(TRACE_LEVEL_ERROR, TRACE_DRIVER, "OpenIOTarget failed for Reset GPIO 0x%x", status);
 			goto exit;
